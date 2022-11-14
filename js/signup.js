@@ -4,7 +4,7 @@ const passwordInput = document.getElementById("password-input-signup");
 const profileImgInput = document.getElementById("image-input-signup");
 const validationSignup = document.getElementById("validation-signup");
 
-const server = "http://localhost:3000";
+const server = "http://summative3-backend.vercel.app";
 
 signupBtn.onclick = function () {
   event.preventDefault();
