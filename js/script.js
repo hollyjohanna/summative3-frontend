@@ -2,7 +2,7 @@
 //                   CONST DECLARATIONS
 //=======================================================
 
-const server = "http://summative3-backend.vercel.app";
+const server = "https://summative3-backend.vercel.app";
 
 // const { get } = require("express/lib/response");
 
@@ -20,7 +20,7 @@ const grid = document.getElementById("feed-grid-cont");
 let showAllPosts = () => {
   $.ajax({
     type: "GET",
-    url: "http://summative3-backend.vercel.app/allWildlifePosts",
+    url: "https://summative3-backend.vercel.app/allWildlifePosts",
     success: (posts) => {
       console.log(posts);
       renderPosts(posts);
@@ -101,7 +101,7 @@ renderPostBtn.onclick = () => {
     // let authorImageURL = sessionStorage.profile_image_url
     // let authorID = sessionStorage.userID
     $.ajax({
-      url: `http://summative3-backend.vercel.app/addWildlifePost`,
+      url: `https://summative3-backend.vercel.app/addWildlifePost`,
       // use the post type to create data somewhere
       // requesting to POST our data
       type: "POST",
@@ -305,7 +305,7 @@ let openPost = (thisPost) => {
       console.log(postId, postTitle, postLocation, postCaption);
 
       $.ajax({
-        url: `http://summative3-backend.vercel.app/updatePost/${postId}`,
+        url: `https://summative3-backend.vercel.app/updatePost/${postId}`,
         type: "PATCH",
         data: {
           title: postTitle,
@@ -320,7 +320,7 @@ let openPost = (thisPost) => {
             wildlifePost.caption = postCaption;
             $.ajax({
               type: "GET",
-              url: "http://summative3-backend.vercel.app/allWildlifePosts",
+              url: "https://summative3-backend.vercel.app/allWildlifePosts",
               success: () => {
                 showAllPosts();
                 openPost(wildlifePost);
@@ -350,7 +350,7 @@ let openPost = (thisPost) => {
   populateEditModal = (selectedPostId) => {
     console.log(selectedPostId);
     $.ajax({
-      url: `http://summative3-backend.vercel.app/wildlifePost/${selectedPostId}`,
+      url: `https://summative3-backend.vercel.app/wildlifePost/${selectedPostId}`,
       type: "GET",
       success: (wildlifePostData, selectedPostId) => {
         // console.log('student was found');
@@ -369,7 +369,7 @@ let openPost = (thisPost) => {
     // use ajax and go to the delete route
     $.ajax({
       // Let's go to our route
-      url: `http://summative3-backend.vercel.app/deleteWildlifePost/${postId}`,
+      url: `https://summative3-backend.vercel.app/deleteWildlifePost/${postId}`,
       type: "DELETE",
       success: () => {
         console.log("HELLO THERE");
@@ -414,7 +414,7 @@ let openPost = (thisPost) => {
       let postModalCont = document.getElementById("post-modal-cont");
       // console.log(wildlifePostId);
       $.ajax({
-        url: `http://summative3-backend.vercel.app/postComment`,
+        url: `https://summative3-backend.vercel.app/postComment`,
         type: "POST",
         data: {
           // comment_id: sessionStorage.userID,
